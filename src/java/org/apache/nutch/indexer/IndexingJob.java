@@ -104,6 +104,10 @@ public class IndexingJob extends NutchTool implements Tool {
       boolean filter, boolean normalize, boolean addBinaryContent,
       boolean base64) throws IOException, InterruptedException, ClassNotFoundException {
 
+    // FIXME
+    addBinaryContent = true;
+    base64 = true;
+
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     long start = System.currentTimeMillis();
     LOG.info("Indexer: starting at {}", sdf.format(start));
@@ -280,6 +284,10 @@ public class IndexingJob extends NutchTool implements Tool {
         }
       }
     }
+
+    // FIXME
+    addBinaryContent = true;
+    base64 = true;
 
     if (segments.size() == 0) {
       usage();
